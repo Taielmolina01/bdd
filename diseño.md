@@ -325,7 +325,8 @@ R original tambien
 
 ### Pasar a 3FN
 
-Sea R(A,B,C,D,E,G) y Fmin = {AB->C, C->B, E->D, D->G, G->E, C->G}
+Sea R(A,B,C,D,E,G) y 
+Fmin = {AB->C, C->B, E->D, D->G, G->E, C->G}
 CCs {AB} y {AC}
 
 Para esto necesitamos tener un FMIN
