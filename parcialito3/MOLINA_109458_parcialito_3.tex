@@ -1,0 +1,252 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\tikzset{every node/.style={circle, draw, minimum size=1cm, inner sep=2pt}}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{UNIVERSIDAD DE BUENOS AIRES}\\
+    \large FIUBA - BASE DE DATOS\\
+    \vspace{0.5cm}
+    \large \textbf{PARCIALITO NORMALIZACIÓN}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Nombre: Molina, Taiel Alexis} \hfill \textbf{Padrón: 109458}  \\
+\textbf{Fecha: 28/04/2025} \\
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Compromiso ético:} Esta evaluación es domiciliaria, le permite evaluar su nivel de comprensión de la materia antes de la evaluación definitiva. Para que tenga validez usted debe garantizar que ha intentado resolverlo con su mejor esfuerzo; y que las respuestas sean el resultado únicamente de su trabajo y conocimiento individuales.
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Instrucciones:} Resuelva los ejercicios, detallando los pasos más importantes, y genere con esta información un archivo PDF. Este archivo llámelo \texttt{``APELLIDO\_PADRON\_parcialito\_3.pdf''}. En la cabecera de este archivo escriba su nombre y apellido y número de padrón. Suba este archivo al campus antes de las \textbf{23:59 PM} del \textbf{sábado 26/04/2025} si quiere tener la corrección antes del miércoles, o antes de las \textbf{23:59 PM} del \textbf{martes 29/04/2025} en caso de que no tenga apuro por el resultado.
+
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Considere la relación $R(A, B, C, D, E, F, G, H)$ con el conjunto minimal de dependencias funcionales:
+    \[
+        F = \{AB \rightarrow C,\ C \rightarrow D,\ E \rightarrow F,\ F \rightarrow G,\ G \rightarrow E,\ D \rightarrow A,\ D \rightarrow B\}
+    \]
+    Encuentre el conjunto de claves candidatas.
+
+    \vspace{0.4cm}
+
+    \textbf{Resolución:}
+    
+    Noto que E, F y G son atributos equivalentes $\rightarrow$ dejo solo a E.
+
+    \vspace{0.2cm}
+
+    $R_{aux}(A,B,C,D,E,H)$
+
+    $F_{min aux} = \{AB \rightarrow C, C\rightarrow D, D \rightarrow A, D \rightarrow B\}$
+
+    \vspace{0.2cm}
+
+    Realizo la tabla que vimos con Lucas en clase para determinar si los atributos seguro están, seguro no están o pueden o no estar en las claves candidatas (CCs a partir de ahora).
+    
+    \vspace{0.1cm}
+
+    \begin{center}
+        \begin{tabular}{c|c|c|c|c|c}
+             \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{H} \\
+             \hline
+             I & I & I & I &   &   \\
+             D & D & D & D &   &   \\
+        \end{tabular}
+    \end{center}
+
+    \vspace{0.1cm}
+
+    Veo que E y H son atributos independientes $\rightarrow$ están en todas las CCs
+
+    \vspace{0.1cm}
+
+    A, B, C y D aparecen a izquierda y derecha $\rightarrow$ pueden o no estar en las CCs.
+
+    \vspace{0.1cm}
+
+    Busco clausura de EH
+
+    \vspace{0.1cm}
+
+    $\{EH\}^{+}_{aux} = \{EH\} \rightarrow$ no es CC
+
+    \vspace{0.1cm}
+
+    Busco clausuras con un atributo más
+
+    $\{AEH\}^{+}_{aux} = \{AEH\} \rightarrow$ no es CC
+
+    \vspace{0.1cm}
+
+    $\{BEH\}^{+}_{aux} = \{BEH\} \rightarrow$ no es CC
+
+    \vspace{0.1cm}
+
+    $\{CEH\}^{+}_{aux} = \{ABCDEH\} \rightarrow$ es CC
+
+    \vspace{0.1cm}
+
+    $\{DEH\}^{+}_{aux} = \{ABCDEH\} \rightarrow$ es CC
+
+    \vspace{0.1cm}
+
+    No pruebo combinaciones que tengan CEH o DEH porque ya se que no van a ser minimales.
+
+    \vspace{0.1cm}
+
+    $\{ABEH\}^{+}_{aux} = \{ABCDEH\} \rightarrow$ es CC
+
+    \vspace{0.1cm}
+
+    Finalmente, obtengo que CCs de $R_{aux}$ son $\{\{CEH\},  \{DEH\}, \{ABEH\}\} \hspace{0.1cm} \rightarrow$ son también CCs de R. Ahora tengo que agregar las combinaciones que se encuentran en la relación original R con los atributos "descartados" \hspace{0.1cm} (F y G).
+
+    Quedan finalmente como CCs:
+
+    \vspace{0.1cm}
+
+    \[
+    \left\{
+    \begin{array}{l}
+    \{CEH\},\quad \{DEH\},\quad \{ABEH\}, \\
+    \{CFH\},\quad \{DFH\},\quad \{ABFH\}, \\
+    \{CGH\},\quad \{DGH\},\quad \{ABGH\}
+    \end{array}
+    \right\}
+    \]
+
+    \item Dada la relación $R(A,B,C,D,E,G,H)$ con el conjunto minimal de dependencias funcionales:
+    \[
+        F = \{AD \rightarrow C,\ G \rightarrow H,\ BG \rightarrow E,\ CH \rightarrow B\}
+    \]
+    con clave candidata $\{ADG\}$.
+
+    \noindent
+    Suponga que aplicamos el algoritmo de descomposición en FNBC y elegimos para el primer paso la dependencia funcional $CH \rightarrow B$.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Obtenga los conjuntos minimales $F_1$ y $F_2$ de dependencias funcionales.
+        \item Obtenga los conjuntos $CC_1$ y $CC_2$ de claves candidatas para cada relación.
+        \item Indique cuál es la máxima forma normal en la que se encuentran $R_1$ y $R_2$.
+    \end{enumerate}
+
+    \noindent
+    Recuerde que se proyectan tanto las dependencias explícitas como las implícitas.
+
+    \vspace{0.4cm}
+
+    \textbf{Resolución:}
+
+    \vspace{0.2cm}
+    
+\begin{center}
+    \begin{tikzpicture}[->, >=stealth, node distance=4cm,
+        every node/.style={
+            circle, 
+            draw, 
+            minimum size=2.5cm, % tamaño fijo
+            align=center,     % centra el texto
+            inner sep=2pt,     % pequeño margen interno
+        }
+    ]
+        \node (root) {ABCDEGH};
+        \node (left) [below left of=root] {BCH};
+        \node (right) [below right of=root] {ACDEGH};
+        
+        \draw (root) -- (left);
+        \draw (root) -- (right);
+    \end{tikzpicture}
+\end{center}
+
+Llamando F1 a lo que quedó a la izquierda tenemos 
+
+$F_1=\{CH\rightarrow B\}$
+
+$CCs_{F_1}=\{CH\}$
+
+Está en FNBC porque para todas las dependencias el implicante es superclave.
+
+$F_2=\{AD\rightarrow C, CHG \rightarrow E, G \rightarrow H\}$
+
+$CCs_{F_2}=\{ADG\}$
+
+No está en 3FN, quedando en 2FN porque para $CHG\rightarrow E$ E es atributo no primo.
+
+    \item Se tiene el siguiente documento relevado en la Dirección de Museos de la Ciudad de Buenos Aires:
+
+    \begin{quote}
+        \textit{Museos BA+ es una iniciativa del Gobierno de la Ciudad de Buenos Aires destinada a promover el acceso y la participación ciudadana en espacios culturales. La red incluye una amplia variedad de museos que ofrecen exposiciones permanentes y temporales.}
+
+        \textit{Cada museo tiene un código identificador único, un nombre, una dirección, y una especialidad principal (arte, ciencia, historia, tecnología, etc.). Algunos museos forman parte de un circuito temático, que puede agrupar varios museos según su tipo o localización (por ejemplo: ``Circuito Sur'', ``Museos de Arte Moderno'').}
+
+        \textit{Cada exposición es organizada por un único museo y tiene un código único, un título, una fecha de inicio, una fecha de finalización, y una indicación de si incluye obras interactivas o no.}
+
+        \textit{Los visitantes pueden reservar entradas para una exposición determinada. Cada reserva se identifica por un código de reserva, incluye la fecha y hora de la visita, el DNI y nombre del visitante, y el número de acompañantes. Por reglamento, una persona no puede realizar más de una reserva para la misma exposición en un mismo día.}
+    \end{quote}
+
+    Identifique las dependencias funcionales no triviales que verifiquen las restricciones del problema.
+
+    \vspace{0.4cm}
+
+    \textbf{Resolución:}
+
+    \vspace{0.2cm}
+
+    Escribo primero las relaciones y los atributos que tendría cada una de ellas, con las siglas entre paréntesis, que será lo que utilizaré luego para escribir las dependencias.
+
+    \vspace{0.2cm}
+
+    \textbf{Museo:} ID (MID), nombre (MN), dirección (MD), especialidad (ME).
+
+    \vspace{0.1cm}
+    
+    \textbf{Circuito:} nombre\_circuito (CN), id\_museo (MID).
+
+    \vspace{0.1cm}
+    
+    \textbf{Exposición:} codigo (EC), titulo (ET), fecha\_inicio (EFI), fecha\_finalizacion (EFF), incluye\_obras\_interactivas (EIOI), id\_museo (MID).
+
+    \vspace{0.1cm}
+
+    \textbf{Reserva:} codigo (RC), fecha\_visita (RFV), hora\_visita (RHV), dni\_visitante (RDV), nombre\_visitante (RNV), nro\_acompañantes (RNA), codigo\_exposicion (EC).
+
+    \vspace{0.1cm}
+
+    Ahora sí expreso las dependecias funcionales según la sigla (separo con comas para que se entienda mejor):
+
+    \begin{center}
+        $MID \rightarrow MN, MD, ME$
+
+        $MID \rightarrow CN$
+    
+        $EC \rightarrow ET, EIOI$
+    
+        $MID \rightarrow EC$
+    
+        $RC \rightarrow RDV, EC$
+    
+        $RDV, RFV \rightarrow EC$   
+    \end{center}
+
+
+    
+\end{enumerate}
+
+\end{document}
