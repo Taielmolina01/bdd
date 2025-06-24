@@ -63,8 +63,6 @@ c. No es serializable porque el grafo de precedencias no es un DAG.
                                     X               X               X                   X               X               X                   x
                                     
 a.  
-
-    T2 -> T4 (B)
     
     T1 -> T4 (A)
     
@@ -72,11 +70,9 @@ a.
     
     T3 -> T1 (C)
     
-b.  
-
-    (wT2(B), rT4(B))
+    como T2 lee y escribe en B pero commitea antes de que alguien acceda a B, no genera conflictos
     
-    (wT2(B), wT4(B))
+b. 
     
     (rT1(A), wT4(A))
     
@@ -88,9 +84,13 @@ b.
     
     (wT4(A), WT3(A))
     
+    (rt4(A), wT3(A))
+    
     (wT3(C), rT1(C))
     
     (wT3(C), wT1(C))
+    
+    (rT3(C), wT1(C))
 
 c. No es serializable porque el grafo de precedencias no es un DAG.
 
