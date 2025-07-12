@@ -64,6 +64,8 @@ c. No es serializable porque el grafo de precedencias no es un DAG.
                                     
 a.  
     
+    T2 -> T4 (B)
+    
     T1 -> T4 (A)
     
     T4 -> T3 (A)
@@ -92,7 +94,7 @@ b.
     
     (rT3(C), wT1(C))
 
-c. No es serializable porque el grafo de precedencias no es un DAG.
+c. No es serializable porque el grafo de precedencias no es un DAG. 
 
 2. bT1; bT2; bT3; RT1(X); RT2(Z); WT1(Y); RT3(A); WT2(X); RT3(Z); WT3(Z); WT3(Y); cT1; cT2; cT3;
                                     X               X               X        X

@@ -29,7 +29,7 @@ Encuentre los últimos 10 partidos jugados por la selección Argentina.
 
 Encuentre el nombre, el país y la ciudad de los estadios en los que Messi ha hecho gol.
 
-		MATCH (s:Stadium)<-[:PLAYED_AT]-(m:Match)<-[:SCORED_IN]-(p:Player)
+MATCH (s:Stadium)<-[:PLAYED_AT]-(m:Match)<-[:SCORED_IN]-(p:Player)
 WHERE p.family_name='Messi'
 RETURN s.name, s.country, s.city
 
@@ -37,12 +37,13 @@ RETURN s.name, s.country, s.city
 
 Encuentre a todos los arqueros que han metido gol en contra. Indique la fecha y el partido.
 		
-		MATCH (p:Player)-[r:SCORED_IN]->(m:Match)
-		WHERE p.position=’Goalkeeper’ AND r.own_goal=true
-		RETURN m.date, m.name
+MATCH (p:Player)-[r:SCORED_IN]->(m:Match)
+WHERE p.position=’Goalkeeper’ AND r.own_goal=true
+RETURN m.date, m.name
+        
 Encuentre a los jugadores argentinos que hicieron gol el mismo partido que hizo un gol Messi.
 	
-		MATCH(p:Player)-[:SCORED_IN]->(m:Match)
+MATCH(p:Player)-[:SCORED_IN]->(m:Match)
 WHERE p.family_name='Messi'
 WITH m
 MATCH(p2:Player)-[:SCORED_IN]->(m), (p2:Player)-[:REPRESENTS]->(t:Team)
@@ -51,7 +52,7 @@ RETURN DISTINCT p2.family_name, p2.given_name
 
 Encuentre todos los equipos participantes del mundial 2022 que no participaron en el mundial 2018.
 
-	MATCH(t:Team)-[:PARTICIPATES_IN]->(wc1:WorldCup)
+MATCH(t:Team)-[:PARTICIPATES_IN]->(wc1:WorldCup)
 WHERE wc1.year=2022 AND NOT EXISTS {
 (t)-[:PARTICIPATES_IN]->(wc2:WorldCup)
 	WHERE wc2.year=2018
