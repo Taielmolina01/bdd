@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="134pt" height="116pt" viewBox="0.00 0.00 134.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 130,-112 130,4 -4,4"/>
+<!-- T2 -->
+<g id="node1" class="node">
+<title>T2</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">T2</text>
+</g>
+<!-- T3 -->
+<g id="node2" class="node">
+<title>T3</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">T3</text>
+</g>
+<!-- T2&#45;&gt;T3 -->
+<g id="edge1" class="edge">
+<title>T2-&gt;T3</title>
+<path fill="none" stroke="black" d="M35.35,-72.76C39.58,-64.55 44.81,-54.37 49.58,-45.09"/>
+<polygon fill="black" stroke="black" points="52.54,-46.99 54,-36.49 46.32,-43.79 52.54,-46.99"/>
+</g>
+<!-- T1 -->
+<g id="node3" class="node">
+<title>T1</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">T1</text>
+</g>
+<!-- T1&#45;&gt;T3 -->
+<g id="edge2" class="edge">
+<title>T1-&gt;T3</title>
+<path fill="none" stroke="black" d="M90.65,-72.76C86.42,-64.55 81.19,-54.37 76.42,-45.09"/>
+<polygon fill="black" stroke="black" points="79.68,-43.79 72,-36.49 73.46,-46.99 79.68,-43.79"/>
+</g>
+</g>
+</svg>
