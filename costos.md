@@ -169,7 +169,7 @@ El costo sería B(R) + B(S), se lee bloque a bloque ambas tablas.
 Para ellos se debe poder tener todos los bloques de ambas tablas que tienen un mismo valor en los atributos de la condición de junta; la memoria necesaria se calcula como 
 
 $$
-M >= \lceil \frac{B(R)}{V(A, R)} \rceil + \lceil \frac{B(S)}{V(A, S)} \rceil + 1
+M \geq \lceil \frac{B(R)}{V(A, R)} \rceil + \lceil \frac{B(S)}{V(A, S)} \rceil + 1
 $$
 
 Como en general las tablas no están ordenadas, podemos calcular el costo de sort-merge como:
@@ -216,9 +216,9 @@ $$
 
 ### Límites
 
-Primer límite: $$P <= M - 1$$
-Segundo límite: $$min(\lceil(\frac{B(R)}{P})\rceil;\lceil(\frac{B(S)}{P})\rceil) <= M - 2$$
-Tercer límite: $$min(V(A, R); V(A, S)) >= P$$
+Primer límite: $$P \leq M - 1$$
+Segundo límite: $$min(\lceil(\frac{B(R)}{P})\rceil;\lceil(\frac{B(S)}{P})\rceil) \leq M - 2$$
+Tercer límite: $$min(V(A, R); V(A, S)) \geq P$$
 
 ### Cardinalidad
 
