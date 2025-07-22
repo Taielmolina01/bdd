@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="101pt" height="222pt" viewBox="0.00 0.00 101.00 221.60">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 217.6)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-217.6 97,-217.6 97,4 -4,4"/>
+<!-- T1 -->
+<g id="node1" class="node">
+<title>T1</title>
+<ellipse fill="none" stroke="black" cx="33" cy="-195.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="33" y="-191.4" font-family="Times,serif" font-size="14.00">T1</text>
+</g>
+<!-- T3 -->
+<g id="node2" class="node">
+<title>T3</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">T3</text>
+</g>
+<!-- T1&#45;&gt;T3 -->
+<g id="edge1" class="edge">
+<title>T1-&gt;T3</title>
+<path fill="none" stroke="black" d="M28.87,-177.51C25.7,-163.46 21.58,-142.97 19.89,-124.8 17.45,-98.63 19.95,-68.74 22.63,-47.42"/>
+<polygon fill="black" stroke="black" points="26.06,-48.13 23.95,-37.75 19.13,-47.18 26.06,-48.13"/>
+<text text-anchor="middle" x="24.94" y="-102.6" font-family="Times,serif" font-size="14.00">X</text>
+</g>
+<!-- T2 -->
+<g id="node3" class="node">
+<title>T2</title>
+<ellipse fill="none" stroke="black" cx="66" cy="-106.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="66" y="-102.6" font-family="Times,serif" font-size="14.00">T2</text>
+</g>
+<!-- T1&#45;&gt;T2 -->
+<g id="edge2" class="edge">
+<title>T1-&gt;T2</title>
+<path fill="none" stroke="black" d="M39.36,-177.86C43.94,-165.81 50.23,-149.29 55.54,-135.31"/>
+<polygon fill="black" stroke="black" points="58.72,-136.79 59.01,-126.2 52.18,-134.3 58.72,-136.79"/>
+<text text-anchor="middle" x="57.51" y="-147" font-family="Times,serif" font-size="14.00">X</text>
+</g>
+<!-- T2&#45;&gt;T3 -->
+<g id="edge3" class="edge">
+<title>T2-&gt;T3</title>
+<path fill="none" stroke="black" d="M58.48,-89.06C52.98,-76.82 45.4,-59.94 39.05,-45.82"/>
+<polygon fill="black" stroke="black" points="42.41,-44.75 35.12,-37.07 36.02,-47.62 42.41,-44.75"/>
+<text text-anchor="middle" x="55.05" y="-58.2" font-family="Times,serif" font-size="14.00">Y</text>
+</g>
+</g>
+</svg>
